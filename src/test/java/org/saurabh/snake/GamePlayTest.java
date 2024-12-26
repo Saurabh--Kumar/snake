@@ -3,9 +3,9 @@ package org.saurabh.snake;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.saurabh.snake.entity.Board;
+import org.saurabh.snake.board.Board;
 import org.saurabh.snake.entity.Direction;
-import org.saurabh.snake.entity.SimpleBoard;
+import org.saurabh.snake.board.SimpleBoard;
 import org.saurabh.snake.entity.Snake;
 
 import static org.junit.jupiter.api.Assertions.*;

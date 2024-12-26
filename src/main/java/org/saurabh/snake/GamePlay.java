@@ -2,7 +2,7 @@ package org.saurabh.snake;
 
 import lombok.Builder;
 import lombok.Getter;
-import org.saurabh.snake.entity.Board;
+import org.saurabh.snake.board.Board;
 import org.saurabh.snake.entity.Direction;
 import org.saurabh.snake.entity.Snake;
 
