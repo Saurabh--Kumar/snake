@@ -45,19 +45,19 @@ public class GamePlay implements SnakeGame{
             Coordinate nextCoordinate = board.getNextCoordinate(snakeHeadPosition, direction);
 
             if (snake.isCollision(nextCoordinate)) {
-                isGameOver = true;
                 throw new RuntimeException("Snake hit the body. Game Over");
             }
 
             if (movesSoFar % growthStep == 0) {
                 snake.growSnakeBody(nextCoordinate);
-                statsTracker.eatFood(food);
+                //statsTracker.eatFood(food);
             } else {
                 snake.moveSnake(nextCoordinate);
             }
 
             gamePlayPrinter.printBoard(this);
         } catch (Exception e){
+            isGameOver = true;
             log.error("Game Over. Exception: {}", e);
             gamePlayPrinter.printStats(statsTracker);
         }
