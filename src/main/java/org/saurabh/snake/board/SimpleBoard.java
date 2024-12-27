@@ -1,7 +1,11 @@
 package org.saurabh.snake.board;
 
 import org.saurabh.snake.Coordinate;
+import org.saurabh.snake.Symbols;
 import org.saurabh.snake.entity.Direction;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class SimpleBoard implements Board{
     private int row;
@@ -39,6 +43,31 @@ public class SimpleBoard implements Board{
 
 
         return nextCoordinate;
+    }
+
+    @Override
+    public List<Coordinate> getObstacleCoordinates() {
+        return new ArrayList<>();
+    }
+
+    @Override
+    public String getEmptyCellSymbol() {
+        return Symbols.emptyCellSymbol;
+    }
+
+    @Override
+    public String getObstacleSymbol() {
+        return Symbols.obstacleSymbol;
+    }
+
+    @Override
+    public int getRows() {
+        return row;
+    }
+
+    @Override
+    public int getColumns() {
+        return column;
     }
 
     private void handleBoundary(Coordinate nextCoordinate) {
