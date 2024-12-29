@@ -65,8 +65,6 @@ public class GamePlayPrinter {
         }
 
         return board.getEmptyCellSymbol();
-
-
     }
 
     public void printStats(StatsTracker statsTracker) {
