@@ -1,7 +1,7 @@
 package org.saurabh.snake.board;
 
 import org.saurabh.snake.Coordinate;
-import org.saurabh.snake.Symbols;
+import org.saurabh.constants.Symbols;
 import org.saurabh.snake.entity.Direction;
 
 import java.util.ArrayList;
@@ -52,12 +52,12 @@ public class SimpleBoard implements Board{
 
     @Override
     public String getEmptyCellSymbol() {
-        return Symbols.emptyCellSymbol;
+        return Symbols.EMPTY_CELL_SYMBOL;
     }
 
     @Override
     public String getObstacleSymbol() {
-        return Symbols.obstacleSymbol;
+        return Symbols.OBSTACLE_SYMBOL;
     }
 
     @Override

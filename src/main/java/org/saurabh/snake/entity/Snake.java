@@ -3,7 +3,7 @@ package org.saurabh.snake.entity;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import org.saurabh.snake.Coordinate;
-import org.saurabh.snake.Symbols;
+import org.saurabh.constants.Symbols;
 
 import java.util.Deque;
 import java.util.HashSet;
@@ -42,7 +42,7 @@ public class Snake {
     }
 
     public String getSnakeCellSymbol(){
-        return Symbols.snakeBodySymbol;
+        return Symbols.SNAKE_BODY_SYMBOL;
     }
 
     public void printSnake(){

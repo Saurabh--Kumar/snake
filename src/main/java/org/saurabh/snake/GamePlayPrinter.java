@@ -1,5 +1,6 @@
 package org.saurabh.snake;
 
+import org.saurabh.constants.Symbols;
 import org.saurabh.snake.board.Board;
 import org.saurabh.snake.entity.Snake;
 import org.saurabh.snake.entity.StatsTracker;
@@ -13,14 +14,35 @@ public class GamePlayPrinter {
         int rows = board.getRows();
         int columns = board.getColumns();
 
+        for (int i = 0; i< 100; i++){
+            sb.append(" \n");
+        }
+
+        addRowBoundary(columns, sb);
+
         for (int i = 0; i< rows; i++){
+            sb.append(".");
             for (int j=0; j < columns; j++){
                 sb.append(addCell(gamePlay, i, j));
             }
-            sb.append("\n");
+            sb.append(".\n");
         }
 
-        System.out.println(sb.toString());
+        addRowBoundary(columns, sb);
+
+        System.out.print(sb.toString());
+        try {
+            Thread.sleep(50);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    private static void addRowBoundary(int columns, StringBuilder sb) {
+        for (int i = 0; i< columns +2; i++){
+            sb.append(Symbols.ROW_BOUNDARY);
+        }
+        sb.append("\n");
     }
 
     private String addCell(GamePlay gamePlay, int row, int column) {
