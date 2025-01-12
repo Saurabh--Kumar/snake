@@ -6,6 +6,8 @@ import org.saurabh.snake.entity.Snake;
 import org.saurabh.snake.entity.StatsTracker;
 import org.saurabh.snake.food.Food;
 
+import static org.saurabh.constants.Constants.BOARD_REFRESH_TIME_IN_MS;
+
 public class GamePlayPrinter {
     public void printBoard(GamePlay gamePlay){
         StringBuilder sb = new StringBuilder();
@@ -32,7 +34,7 @@ public class GamePlayPrinter {
 
         System.out.print(sb.toString());
         try {
-            Thread.sleep(50);
+            Thread.sleep(BOARD_REFRESH_TIME_IN_MS);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
