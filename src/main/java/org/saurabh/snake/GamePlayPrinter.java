@@ -1,10 +1,13 @@
 package org.saurabh.snake;
 
-import org.saurabh.constants.Symbols;
+import org.saurabh.snake.constants.Symbols;
 import org.saurabh.snake.board.Board;
+import org.saurabh.snake.entity.Coordinate;
 import org.saurabh.snake.entity.Snake;
 import org.saurabh.snake.entity.StatsTracker;
 import org.saurabh.snake.food.Food;
+
+import static org.saurabh.snake.constants.Constants.BOARD_REFRESH_TIME_IN_MS;
 
 public class GamePlayPrinter {
     public void printBoard(GamePlay gamePlay){
@@ -32,7 +35,7 @@ public class GamePlayPrinter {
 
         System.out.print(sb.toString());
         try {
-            Thread.sleep(50);
+            Thread.sleep(BOARD_REFRESH_TIME_IN_MS);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
@@ -40,7 +43,7 @@ public class GamePlayPrinter {
 
     private static void addRowBoundary(int columns, StringBuilder sb) {
         for (int i = 0; i< columns +2; i++){
-            sb.append(Symbols.ROW_BOUNDARY);
+            sb.append(Symbols.ROW_BOUNDARY_SYMBOL);
         }
         sb.append("\n");
     }

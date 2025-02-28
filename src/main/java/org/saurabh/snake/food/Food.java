@@ -1,6 +1,6 @@
 package org.saurabh.snake.food;
 
-import org.saurabh.snake.Coordinate;
+import org.saurabh.snake.entity.Coordinate;
 
 public interface Food {
     public int getFoodPoints();

@@ -2,8 +2,7 @@ package org.saurabh.snake.entity;
 
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
-import org.saurabh.snake.Coordinate;
-import org.saurabh.constants.Symbols;
+import org.saurabh.snake.constants.Symbols;
 
 import java.util.Deque;
 import java.util.HashSet;
@@ -48,5 +47,9 @@ public class Snake {
     public void printSnake(){
         log.info("Snake Body: {}, Set: {} ", snakeBody, snakeBodySet);
 
+    }
+
+    public Set<Coordinate> getSnakeBodySet(){
+        return snakeBodySet;
     }
 }

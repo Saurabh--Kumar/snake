@@ -1,8 +1,14 @@
 package org.saurabh.snake.food;
 
-import org.saurabh.snake.Coordinate;
+import org.saurabh.snake.entity.Coordinate;
 
 public class NormalFood implements Food{
+
+    private final Coordinate foodCoordinate;
+
+    public NormalFood(Coordinate foodCoordinate){
+        this.foodCoordinate = foodCoordinate;
+    }
     @Override
     public int getFoodPoints() {
         return 1;
@@ -10,7 +16,7 @@ public class NormalFood implements Food{
 
     @Override
     public String getFoodSymbol() {
-        return ".";
+        return "#";
     }
 
     @Override
@@ -25,6 +31,6 @@ public class NormalFood implements Food{
 
     @Override
     public Coordinate getFoodCoordinate() {
-        return null;
+        return foodCoordinate;
     }
 }
