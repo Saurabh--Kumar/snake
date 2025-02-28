@@ -4,6 +4,7 @@ package org.saurabh.snake;
 import org.junit.Before;
 import org.junit.Test;
 import org.saurabh.snake.board.Board;
+import org.saurabh.snake.entity.Coordinate;
 import org.saurabh.snake.entity.Direction;
 import org.saurabh.snake.board.SimpleBoard;
 import org.saurabh.snake.entity.Snake;

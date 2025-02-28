@@ -1,9 +1,10 @@
 package org.saurabh.snake.board;
 
-import org.saurabh.snake.Coordinate;
+import org.saurabh.snake.entity.Coordinate;
 import org.saurabh.snake.entity.Direction;
 
 import java.util.List;
+import java.util.Set;
 
 public interface Board {
 
@@ -11,9 +12,12 @@ public interface Board {
 
     List<Coordinate> getObstacleCoordinates();
 
+    Set<Coordinate> getFreeCoordinates();
+
     String getEmptyCellSymbol();
     String getObstacleSymbol();
 
     int getRows();
     int getColumns();
+
 }

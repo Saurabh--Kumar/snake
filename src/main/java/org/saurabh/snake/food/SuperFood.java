@@ -1,8 +1,24 @@
 package org.saurabh.snake.food;
 
-import org.saurabh.snake.Coordinate;
+import lombok.Data;
+import org.saurabh.snake.entity.Coordinate;
 
+import static org.saurabh.snake.constants.Constants.SUPER_FOOD_INCREMENTAL_LENGTH;
+import static org.saurabh.snake.constants.Constants.SUPER_FOOD_POINTS;
+import static org.saurabh.snake.constants.Symbols.SUPER_FOOD_SYMBOL;
+
+@Data
 public class SuperFood implements Food{
+
+    private int foodPoints = SUPER_FOOD_POINTS;
+    private String FoodSymbol = SUPER_FOOD_SYMBOL;
+    private FoodType foodType = FoodType.Super;
+    private int incrementalLength = SUPER_FOOD_INCREMENTAL_LENGTH;
+    private final Coordinate foodCoordinate;
+
+    public SuperFood(Coordinate foodCoordinate){
+        this.foodCoordinate = foodCoordinate;
+    }
     @Override
     public int getFoodPoints() {
         return 50;
@@ -25,6 +41,6 @@ public class SuperFood implements Food{
 
     @Override
     public Coordinate getFoodCoordinate() {
-        return null;
+        return foodCoordinate;
     }
 }

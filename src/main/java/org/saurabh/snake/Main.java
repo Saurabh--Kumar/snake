@@ -1,13 +1,15 @@
-package org.saurabh;
+package org.saurabh.snake;
 
 
 import org.saurabh.snake.GamePlay;
 import org.saurabh.snake.GamePlayPrinter;
 import org.saurabh.snake.board.Board;
 import org.saurabh.snake.board.SimpleBoard;
+import org.saurabh.snake.entity.Coordinate;
 import org.saurabh.snake.entity.Direction;
 import org.saurabh.snake.entity.Snake;
 import org.saurabh.snake.food.Food;
+import org.saurabh.snake.food.FoodGenerator;
 import org.saurabh.snake.food.NormalFood;
 
 
@@ -20,7 +22,11 @@ public class Main {
         Board board = new SimpleBoard(10, 20);
         Snake snake = new Snake();
         GamePlayPrinter gamePlayPrinter = new GamePlayPrinter();
-        Food food = new NormalFood();
+        Food food = new NormalFood(new Coordinate(5,5));
+        FoodGenerator foodGenerator = FoodGenerator.builder()
+                .board(board)
+                .snake(snake)
+                .build();
         GamePlay gamePlay = GamePlay.builder()
                 .snake(snake)
                 .board(board)
@@ -29,6 +35,7 @@ public class Main {
                 .growthStep(5)
                 .food(food)
                 .gamePlayPrinter(gamePlayPrinter)
+                .foodGenerator(foodGenerator)
                 .build();
 
 

@@ -1,15 +1,19 @@
 package org.saurabh.snake.board;
 
-import org.saurabh.snake.Coordinate;
-import org.saurabh.constants.Symbols;
+import org.saurabh.snake.entity.Coordinate;
+import org.saurabh.snake.constants.Symbols;
 import org.saurabh.snake.entity.Direction;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class SimpleBoard implements Board{
     private int row;
     private int column;
+
+    private Set<Coordinate> freeCoordinates;
 
     public SimpleBoard(int row, int column){
         if(row<=0 || column <= 0){
@@ -18,6 +22,13 @@ public class SimpleBoard implements Board{
 
         this.row = row;
         this.column = column;
+        freeCoordinates = new HashSet<>();
+
+        for (int i = 0; i < row; i++){
+            for (int j = 0; j< column; j++){
+                freeCoordinates.add(new Coordinate(i,j));
+            }
+        }
     }
 
 
@@ -48,6 +59,11 @@ public class SimpleBoard implements Board{
     @Override
     public List<Coordinate> getObstacleCoordinates() {
         return new ArrayList<>();
+    }
+
+    @Override
+    public Set<Coordinate> getFreeCoordinates() {
+        return freeCoordinates;
     }
 
     @Override
