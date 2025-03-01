@@ -2,6 +2,7 @@ package org.saurabh.snake;
 
 import org.saurabh.snake.entity.Direction;
 
+import java.util.HashMap;
 import java.util.Map;
 
 public class GameLoop {
@@ -16,6 +17,7 @@ public class GameLoop {
 
     public GameLoop(GamePlay gamePlay){
         this.gamePlay = gamePlay;
+        oppositeDirectionMap = new HashMap<>();
         oppositeDirectionMap.put(Direction.DOWN, Direction.UP);
         oppositeDirectionMap.put(Direction.UP, Direction.DOWN);
         oppositeDirectionMap.put(Direction.LEFT, Direction.RIGHT);
@@ -29,6 +31,7 @@ public class GameLoop {
                 gamePlay.moveSnake(currentDirection);
             } catch (Exception e){
                 isGameOver = true;
+                throw e;
             }
         }
     }
