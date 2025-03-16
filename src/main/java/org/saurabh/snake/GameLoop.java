@@ -42,5 +42,9 @@ public class GameLoop {
         }
     }
 
+    public boolean isGameOver(){
+        return gamePlay.isGameOver();
+    }
+
 
 }

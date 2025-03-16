@@ -63,8 +63,9 @@ public class GamePlay implements SnakeGame{
             gamePlayPrinter.printBoard(this);
         } catch (Exception e){
             isGameOver = true;
-            log.error("Game Over. Exception: {}", e);
+            //log.error("Game Over. Exception: {}", e);
             gamePlayPrinter.printStats(statsTracker);
+            throw e;
         }
     }
 
