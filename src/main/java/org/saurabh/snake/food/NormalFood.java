@@ -2,8 +2,15 @@ package org.saurabh.snake.food;
 
 import org.saurabh.snake.entity.Coordinate;
 
+import static org.saurabh.snake.constants.Constants.*;
+import static org.saurabh.snake.constants.Symbols.NORMAL_FOOD_SYMBOL;
+
 public class NormalFood implements Food{
 
+    private int foodPoints = NORMAL_FOOD_POINTS;
+    private String foodSymbol = NORMAL_FOOD_SYMBOL;
+    private FoodType foodType = FoodType.Normal;
+    private int incrementalLength = NORMAL_FOOD_INCREMENTAL_LENGTH;
     private final Coordinate foodCoordinate;
 
     public NormalFood(Coordinate foodCoordinate){
@@ -11,22 +18,22 @@ public class NormalFood implements Food{
     }
     @Override
     public int getFoodPoints() {
-        return 1;
+        return foodPoints;
     }
 
     @Override
     public String getFoodSymbol() {
-        return "#";
+        return foodSymbol;
     }
 
     @Override
     public FoodType getFoodType() {
-        return FoodType.Normal;
+        return foodType;
     }
 
     @Override
     public int getIncrementalLength() {
-        return 1;
+        return incrementalLength;
     }
 
     @Override

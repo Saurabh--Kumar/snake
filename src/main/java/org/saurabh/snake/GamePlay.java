@@ -13,6 +13,10 @@ import org.saurabh.snake.food.Food;
 import org.saurabh.snake.food.FoodGenerator;
 import org.saurabh.snake.food.FoodType;
 
+import java.util.Random;
+
+import static org.saurabh.snake.constants.Constants.SUPER_FOOD_PERCENTAGE;
+
 @Builder
 @Getter
 @Slf4j
@@ -70,7 +74,14 @@ public class GamePlay implements SnakeGame{
     }
 
     private void generateFood() {
-        food = foodGenerator.generateFood(FoodType.Normal);
+        Random random = new Random();
+        int randomNumber = random.nextInt(100);
+
+        if(randomNumber <= SUPER_FOOD_PERCENTAGE){
+            food = foodGenerator.generateFood(FoodType.Super);
+        } else {
+            food = foodGenerator.generateFood(FoodType.Normal);
+        }
     }
 
 
