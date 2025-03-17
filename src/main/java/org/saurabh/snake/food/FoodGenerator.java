@@ -5,8 +5,7 @@ import org.saurabh.snake.board.Board;
 import org.saurabh.snake.entity.Coordinate;
 import org.saurabh.snake.entity.Snake;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 @Builder
 public class FoodGenerator {
@@ -31,7 +30,11 @@ public class FoodGenerator {
 
         freeCoordinates.removeAll(snakeBodyCoordinates);
 
-        return freeCoordinates.iterator().next();
+        List<Coordinate> freeCoordinatesList = new ArrayList<>(freeCoordinates);
+
+        Random random = new Random();
+        int randomIndex = random.nextInt(freeCoordinatesList.size());
+        return freeCoordinatesList.get(randomIndex);
     }
 
 }

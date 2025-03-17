@@ -16,6 +16,7 @@ import javax.swing.*;
 
 
 public class Main {
+
     public static void main(String[] args) throws InterruptedException {
         JFrame frame = new JFrame();
         GameLoop gameLoop = initializeGameLoop();
